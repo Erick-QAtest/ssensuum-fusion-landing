@@ -1,0 +1,504 @@
+:root {
+  --nogal: #633725;
+  --nogal-dark: #3e2419;
+  --nogal-soft: #80503a;
+  --ink: #1b1816;
+  --text: #625c57;
+  --cream: #f7f3ed;
+  --paper: #fffdf9;
+  --sand: #efe4d8;
+  --peach: #f6dfc7;
+  --line: #ded3ca;
+  --wood: #b48a68;
+  --success: #596a52;
+  --danger: #9a4d43;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 30px;
+  --pill: 999px;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--paper);
+  font-family: "Karla", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body, button, input { font-family: "Karla", system-ui, sans-serif; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+svg { width: 1em; height: 1em; }
+
+/* ========================= FUSION LANDING ========================= */
+.fusionPage { overflow: clip; background: var(--paper); }
+.fusionNav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  min-height: 74px;
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr auto;
+  align-items: center;
+  gap: 28px;
+  padding: 10px max(24px, 5vw);
+  background: rgba(255, 253, 249, .94);
+  border-bottom: 1px solid rgba(99, 55, 37, .10);
+  backdrop-filter: blur(14px);
+}
+.fusionNavLogo { display: block; width: 180px; height: 52px; overflow: hidden; }
+.fusionNavLogo img { width: 100%; height: 100%; object-fit: contain; }
+.fusionNavLinks { display: flex; justify-content: center; gap: clamp(16px, 2.2vw, 34px); }
+.fusionNavLinks a,
+.fusionFooterLinks a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: .86rem;
+}
+.fusionNavLinks a:hover,
+.fusionFooterLinks a:hover { color: var(--nogal); }
+
+.fusionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 1px solid var(--nogal);
+  border-radius: var(--pill);
+  background: var(--nogal);
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.fusionButton svg { width: 17px; height: 17px; }
+.fusionButton:hover { transform: translateY(-1px); background: var(--nogal-dark); box-shadow: 0 10px 26px rgba(77, 43, 28, .14); }
+.fusionButton:disabled { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+.fusionButtonOutline { background: transparent; color: var(--nogal); }
+.fusionButtonOutline:hover { color: #fff; }
+.fusionButtonSmall { min-height: 42px; padding: 0 20px; font-size: .75rem; }
+.fusionButtonLight { background: #fff; color: var(--nogal); border-color: #fff; }
+.fusionButtonLight:hover { background: var(--cream); color: var(--nogal-dark); }
+
+.fusionHero {
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(420px, .92fr);
+  background: var(--cream);
+}
+.fusionHeroCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(54px, 7vw, 108px) clamp(34px, 6vw, 100px);
+}
+.fusionHeroLogo {
+  width: min(440px, 78%);
+  max-height: 126px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 24px;
+  mix-blend-mode: multiply;
+}
+.fusionEyebrow,
+.fusionKicker {
+  margin: 0 0 12px;
+  color: var(--nogal-soft);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.fusionKickerLight { color: #ead8c8; }
+.fusionHero h1 {
+  margin: 0;
+  max-width: 720px;
+  color: var(--ink);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(64px, 7vw, 104px);
+  font-weight: 400;
+  line-height: .91;
+  letter-spacing: -.035em;
+}
+.fusionHero h1 em { color: var(--wood); font-weight: 400; }
+.fusionHeroLead { max-width: 650px; margin: 28px 0 0; font-size: clamp(18px, 1.55vw, 23px); line-height: 1.55; color: var(--text); }
+.fusionHeroActions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.fusionReassurance {
+  max-width: 650px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(99, 55, 37, .18);
+  color: #554d47;
+  font-size: .9rem;
+}
+.fusionReassurance svg { flex: 0 0 22px; width: 22px; height: 22px; color: var(--nogal); margin-top: 1px; }
+.fusionHeroTrust { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 22px; color: #7b6f67; font-size: .8rem; }
+.fusionHeroTrust span { position: relative; padding-left: 14px; }
+.fusionHeroTrust span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--wood); position: absolute; left: 0; top: .7em; }
+
+.fusionHeroVisual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 720px;
+  padding: clamp(44px, 6vw, 82px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 68% 27%, rgba(226, 184, 145, .31), transparent 31%),
+    linear-gradient(145deg, #1b120d 0%, #3f2a1f 48%, #1b120d 100%);
+}
+.fusionHeroVisual::before,
+.fusionHeroVisual::after {
+  content: "";
+  position: absolute;
+  width: min(680px, 80vw);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+}
+.fusionHeroVisual::after { width: min(520px, 64vw); border-color: rgba(255,255,255,.07); }
+.fusionHeroPosterWrap {
+  position: relative;
+  z-index: 2;
+  width: min(390px, 74%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 36px 80px rgba(0,0,0,.38);
+  transform: rotate(-1.5deg);
+}
+.fusionHeroPosterWrap img { width: 100%; height: auto; }
+.fusionFirstVisitCard {
+  position: absolute;
+  z-index: 4;
+  right: clamp(20px, 4vw, 64px);
+  bottom: clamp(28px, 5vw, 68px);
+  min-width: 240px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 18px;
+  background: rgba(26, 18, 13, .88);
+  color: #fff;
+  box-shadow: 0 20px 48px rgba(0,0,0,.25);
+  backdrop-filter: blur(8px);
+}
+.fusionFirstVisitCard > span { color: #d6b89d; font-family: "Josefin Sans", sans-serif; font-size: .64rem; letter-spacing: .18em; }
+.fusionFirstVisitCard p { margin: 10px 0 2px; color: #eadfd5; }
+.fusionFirstVisitCard strong { display: block; font-family: "DM Serif Display", Georgia, serif; font-size: 2.55rem; font-weight: 400; line-height: 1; }
+.fusionFirstVisitCard small { display: block; margin-top: 7px; color: #cdbfb4; }
+
+.fusionIdentityStrip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 22px max(22px, 4vw);
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+  text-align: center;
+}
+.fusionIdentityStrip strong { color: #665a53; font-family: "Josefin Sans", sans-serif; font-size: .79rem; font-weight: 500; letter-spacing: .35em; }
+.fusionIdentityStrip span { color: #7a716a; font-size: .82rem; }
+
+.fusionSection { width: min(1240px, 92vw); margin-inline: auto; padding: clamp(68px, 7vw, 108px) 0; }
+.fusionSectionHeading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 520px);
+  gap: 34px;
+  align-items: end;
+  margin-bottom: 38px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.fusionSectionHeading h2,
+.fusionSplitHeader h2,
+.fusionMembership h2 {
+  margin: 0;
+  color: var(--nogal);
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(38px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.03;
+  letter-spacing: .01em;
+}
+.fusionSectionHeading > p,
+.fusionHeadingSide p { margin: 0; font-size: 1.05rem; color: #6c645e; }
+.fusionSectionHeadingActions { grid-template-columns: .75fr 1.25fr; }
+.fusionHeadingSide { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.fusionPillLink { display: inline-flex; padding: 9px 18px; border: 1px solid var(--nogal); border-radius: var(--pill); color: var(--nogal); font-family: "Josefin Sans", sans-serif; font-size: .76rem; letter-spacing: .08em; text-decoration: none; }
+
+.fusionClub { padding-top: 72px; }
+.fusionExperienceGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.fusionExperienceCard { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 12px 34px rgba(78, 48, 32, .06); }
+.fusionExperienceCard img { width: 100%; height: 230px; object-fit: cover; object-position: center top; }
+.fusionExperienceBrand img { object-fit: contain; padding: 30px 22px; background: #fff; }
+.fusionExperienceCard > div { display: flex; align-items: center; gap: 12px; padding: 14px 16px; }
+.fusionExperienceCard span { color: var(--wood); font-family: "Josefin Sans", sans-serif; font-size: .7rem; }
+.fusionExperienceCard strong { color: var(--ink); font-size: .9rem; }
+
+.fusionCatalogSection { padding-top: 46px; }
+.fusionMenuLayout { display: grid; grid-template-columns: minmax(290px, 370px) 1fr; gap: clamp(34px, 5vw, 72px); align-items: start; }
+.fusionFeatureCard { position: sticky; top: 98px; }
+.fusionFeatureCard > img { width: 100%; border-radius: 22px; box-shadow: 0 26px 54px rgba(89, 50, 32, .12); }
+.fusionFeatureButton { width: calc(100% - 32px); margin: -72px 16px 0; position: relative; z-index: 2; background: #fff; color: var(--nogal); border-color: #fff; box-shadow: 0 10px 24px rgba(55,32,22,.15); }
+.fusionFeatureButton:hover { color: #fff; border-color: var(--nogal); }
+.fusionServiceList { border-top: 1px solid var(--line); }
+.fusionServiceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  gap: 24px;
+  align-items: center;
+  min-height: 170px;
+  padding: 28px 14px 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+.fusionServiceRow:first-child { margin-top: 0; padding-left: 24px; border-radius: 16px; background: var(--peach); border-bottom-color: transparent; }
+.fusionServiceTitleLine { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.fusionServiceText h3 { margin: 0; color: var(--ink); font-family: "Josefin Sans", sans-serif; font-size: 1.28rem; font-weight: 600; }
+.fusionServiceText p { margin: 9px 0 4px; color: #6c645e; }
+.fusionServiceText > small { color: var(--nogal); font-size: .88rem; }
+.fusionTag { display: inline-flex; padding: 5px 10px; border-radius: var(--pill); background: var(--nogal); color: #fff; font-family: "Josefin Sans", sans-serif; font-size: .62rem; letter-spacing: .12em; }
+.fusionTagSoft { background: #8b5b43; }
+.fusionServicePurchase { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.fusionServicePurchase > strong { color: var(--nogal); font-family: "DM Serif Display", Georgia, serif; font-size: 2rem; font-weight: 400; line-height: 1; }
+.fusionServicePurchase > span { margin-top: 6px; color: #6b635d; font-size: .82rem; }
+.fusionServicePurchase > small { margin: 2px 0 12px; color: #948981; font-size: .78rem; }
+
+.fusionSecondaryServices { width: min(1340px, 94vw); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; padding-top: 18px; }
+.fusionSplitService { padding: clamp(28px, 4vw, 48px); border-radius: 24px; background: #f7f4f0; }
+.fusionSplitHeader { margin-bottom: 28px; }
+.fusionSplitHeader h2 { font-size: clamp(34px, 3.3vw, 49px); }
+.fusionSplitHeader p { margin: 10px 0 0; max-width: 560px; }
+.fusionSplitBody { display: grid; grid-template-columns: minmax(150px, .55fr) minmax(0, 1fr); gap: 26px; align-items: start; }
+.fusionSplitBody > img { width: 100%; max-height: 470px; object-fit: cover; object-position: top; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+.fusionServiceRowCompact { grid-template-columns: 1fr 132px; min-height: 122px; padding: 20px 0; }
+.fusionServiceRowCompact:first-child { padding-left: 18px; }
+.fusionServiceRowCompact .fusionServiceText h3 { font-size: 1.05rem; }
+.fusionServiceRowCompact .fusionServicePurchase > strong { font-size: 1.5rem; }
+.fusionServiceRowCompact .fusionButtonSmall { min-height: 36px; padding: 0 13px; font-size: .65rem; }
+
+.fusionTeamSection { padding-top: 80px; }
+.fusionTherapistGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.fusionTherapistCard { min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+.fusionTherapistIndex { color: var(--wood); font-family: "Josefin Sans", sans-serif; font-size: .72rem; }
+.fusionTherapistAvatar { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: var(--nogal); color: #fff; font-family: "DM Serif Display", Georgia, serif; font-size: 1.8rem; }
+.fusionTherapistCard h3 { margin: 0; color: var(--ink); font-family: "Josefin Sans", sans-serif; font-size: 1.22rem; }
+.fusionTherapistCard p { margin: 5px 0 0; font-size: .86rem; }
+
+.fusionMembership {
+  width: min(1340px, 94vw);
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+  gap: clamp(36px, 6vw, 78px);
+  align-items: center;
+  padding: clamp(44px, 6vw, 78px);
+  border-radius: 30px;
+  background: linear-gradient(135deg, #6b3b28, #4b2a1e);
+  color: #fff;
+}
+.fusionMembership h2 { color: #fff; }
+.fusionMembershipPrice { margin-top: 24px; font-family: "DM Serif Display", Georgia, serif; font-size: clamp(64px, 7vw, 104px); line-height: .9; }
+.fusionMembershipCopy > p { color: #eadfd8; }
+.fusionMembership ul { margin: 26px 0; padding-left: 20px; color: #f3e8e1; }
+.fusionMembership li { margin: 10px 0; }
+.fusionMembershipVisual { display: grid; place-items: center; }
+.fusionMembershipVisual img { width: min(430px, 100%); max-height: 530px; object-fit: cover; object-position: top; border-radius: 20px; background: #fff; box-shadow: 0 28px 60px rgba(0,0,0,.2); }
+
+.fusionLocation { width: min(1340px, 94vw); }
+.fusionLocationGrid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(36px, 5vw, 74px); align-items: center; }
+.fusionLocationImage img { width: 100%; border-radius: 24px; box-shadow: 0 20px 45px rgba(80, 47, 31, .08); }
+.fusionLocationInfo h3 { margin: 0; color: var(--ink); font-family: "Josefin Sans", sans-serif; font-size: 1.5rem; }
+.fusionLocationFacts { display: grid; gap: 14px; margin: 28px 0; }
+.fusionLocationFacts > div { display: flex; gap: 12px; align-items: flex-start; }
+.fusionLocationFacts svg { width: 22px; height: 22px; color: var(--nogal); flex: 0 0 auto; }
+.fusionLocationFacts span { font-size: .9rem; }
+
+.fusionFooter {
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
+  gap: 26px;
+  align-items: center;
+  padding: 28px max(24px, 5vw) 34px;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+.fusionFooter > img { width: 185px; max-height: 60px; object-fit: contain; }
+.fusionFooterLinks { display: flex; justify-content: center; gap: 26px; }
+
+.errorBox { padding: 16px; border: 1px solid #d8aaa4; background: #fff2f0; color: var(--danger); border-radius: 12px; margin: 20px 0; }
+
+/* ========================= BOOKING FLOW ========================= */
+.bookingShell {
+  min-height: 100vh;
+  padding: 38px max(20px, 6vw) 90px;
+  background: linear-gradient(180deg, #fbf8f4 0%, #fff 42%);
+}
+.backLink { color: var(--nogal); text-decoration: none; font-family: "Josefin Sans", sans-serif; letter-spacing: .04em; }
+.bookingPanel { max-width: 980px; margin: 34px auto 0; }
+.bookingTitle { padding-bottom: 34px; border-bottom: 1px solid var(--line); }
+.kicker { color: var(--wood); letter-spacing: .17em; text-transform: uppercase; font-family: "Josefin Sans", sans-serif; font-size: 12px; font-weight: 600; }
+.bookingTitle h1 { margin: 8px 0 12px; color: var(--nogal); font-family: "DM Serif Display", Georgia, serif; font-size: clamp(44px, 7vw, 78px); font-weight: 400; }
+.bookingTitle p, .muted { color: #7d736d; }
+.step { display: grid; grid-template-columns: 72px 1fr; gap: 24px; padding: 34px 0; border-bottom: 1px solid var(--line); }
+.stepNumber { color: var(--wood); font-family: "Josefin Sans", sans-serif; font-size: 13px; letter-spacing: .12em; }
+.stepContent { min-width: 0; }
+.stepContent h2 { margin-top: 0; color: var(--ink); font-family: "Josefin Sans", sans-serif; font-size: 24px; }
+.therapistGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.bookingTherapists { margin-top: 14px; min-width: 0; }
+.therapistChoice {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  text-align: left;
+  padding: 18px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 16px;
+}
+.therapistChoice small { color: #7d736d; margin: 5px 0 0; display: block; }
+.avatar {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--nogal);
+  color: #fff;
+  font-weight: 800;
+}
+.selected { outline: 2px solid var(--wood); outline-offset: 1px; }
+.secondaryButton { padding: 11px 16px; border: 1px solid var(--line); background: #fff; color: var(--nogal); border-radius: var(--pill); }
+.datesRow { display: grid; grid-template-columns: repeat(7, minmax(70px, 1fr)); gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+.dateButton { min-width: 70px; padding: 12px 6px; border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 14px; }
+.dateButton span { display: block; color: #8a7e75; text-transform: capitalize; font-size: 12px; }
+.dateButton strong { display: block; margin-top: 6px; font-size: 20px; }
+.slotsGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.slotsGrid button { padding: 12px; border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 10px; }
+.primaryButton {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 28px;
+  padding: 14px 22px;
+  border-radius: var(--pill);
+  border: 1px solid var(--nogal);
+  background: var(--nogal);
+  color: #fff;
+  font-weight: 700;
+}
+.primaryButton:disabled { opacity: .35; cursor: not-allowed; }
+.summary { margin-top: 34px; padding: 28px; border-radius: 22px; border: 1px solid var(--wood); background: #fffaf5; }
+.summary h2 { color: var(--nogal); font-family: "DM Serif Display", Georgia, serif; font-size: 34px; font-weight: 400; }
+.summary dl { margin: 0; }
+.summary dl div { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.summary dt { color: #7d736d; }
+.summary dd { margin: 0; font-weight: 700; text-align: right; color: var(--ink); }
+.summaryNote { color: #7d736d; margin-bottom: 0; }
+
+@media (max-width: 1120px) {
+  .fusionNavLinks { display: none; }
+  .fusionNav { grid-template-columns: 1fr auto; }
+  .fusionHero { grid-template-columns: 1fr 420px; }
+  .fusionExperienceGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fusionSecondaryServices { grid-template-columns: 1fr; }
+  .fusionTherapistGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  html { scroll-padding-top: 70px; }
+  .fusionNav { min-height: 66px; padding-block: 7px; }
+  .fusionNavLogo { width: 150px; height: 46px; }
+  .fusionHero { grid-template-columns: 1fr; }
+  .fusionHeroCopy { padding: 54px max(24px, 7vw) 46px; }
+  .fusionHeroLogo { width: min(390px, 88%); }
+  .fusionHeroVisual { min-height: 560px; }
+  .fusionSectionHeading,
+  .fusionSectionHeadingActions { grid-template-columns: 1fr; }
+  .fusionMenuLayout { grid-template-columns: 1fr; }
+  .fusionFeatureCard { position: static; display: grid; grid-template-columns: minmax(180px, 320px) 1fr; align-items: center; gap: 22px; }
+  .fusionFeatureButton { width: auto; margin: 0; }
+  .fusionSplitBody { grid-template-columns: 230px 1fr; }
+  .fusionMembership { grid-template-columns: 1fr 380px; }
+  .fusionLocationGrid { grid-template-columns: 1fr; }
+  .fusionFooter { grid-template-columns: 1fr auto; }
+  .fusionFooterLinks { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; flex-wrap: wrap; }
+  .datesRow { grid-template-columns: repeat(14, 74px); }
+  .slotsGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .fusionNavCta { min-height: 40px; padding-inline: 16px; font-size: .7rem; }
+  .fusionHero h1 { font-size: clamp(54px, 16vw, 78px); }
+  .fusionHeroLead { font-size: 17px; }
+  .fusionHeroActions { flex-direction: column; align-items: stretch; }
+  .fusionHeroActions .fusionButton { width: 100%; }
+  .fusionHeroVisual { min-height: 500px; padding: 42px 20px 110px; }
+  .fusionHeroPosterWrap { width: min(300px, 78vw); }
+  .fusionFirstVisitCard { left: 18px; right: 18px; bottom: 18px; min-width: 0; }
+  .fusionIdentityStrip strong { letter-spacing: .18em; font-size: .68rem; }
+  .fusionSection { width: min(92vw, 680px); padding: 62px 0; }
+  .fusionSectionHeading { margin-bottom: 28px; }
+  .fusionExperienceGrid { grid-template-columns: 1fr; }
+  .fusionExperienceCard img { height: 210px; }
+  .fusionFeatureCard { display: block; }
+  .fusionFeatureButton { width: calc(100% - 28px); margin: -68px 14px 0; }
+  .fusionServiceRow,
+  .fusionServiceRowCompact { grid-template-columns: 1fr; gap: 16px; padding: 24px 0; }
+  .fusionServiceRow:first-child,
+  .fusionServiceRowCompact:first-child { padding: 22px; }
+  .fusionServicePurchase { align-items: flex-start; text-align: left; }
+  .fusionServicePurchase .fusionButton { width: 100%; }
+  .fusionSecondaryServices { width: 94vw; }
+  .fusionSplitService { padding: 28px 20px; }
+  .fusionSplitBody { grid-template-columns: 1fr; }
+  .fusionSplitBody > img { max-height: 440px; width: min(320px, 100%); }
+  .fusionTherapistGrid { grid-template-columns: 1fr; }
+  .fusionMembership { width: 94vw; grid-template-columns: 1fr; padding: 38px 24px; }
+  .fusionMembershipVisual img { max-height: 470px; }
+  .fusionLocation { width: 92vw; }
+  .fusionFooter { grid-template-columns: 1fr; }
+  .fusionFooterLinks { grid-column: auto; grid-row: auto; flex-direction: column; gap: 10px; }
+  .fusionFooter .fusionButton { width: 100%; }
+  .step { grid-template-columns: 1fr; gap: 8px; }
+  .therapistGrid { grid-template-columns: 1fr; }
+  .bookingTherapists { width: 100%; min-width: 0; }
+  .step { display: block; position: relative; isolation: isolate; overflow: hidden; }
+  .stepNumber { margin-bottom: 8px; }
+  .stepContent { width: 100%; min-width: 0; }
+  .datesRow {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+  .dateButton { flex: 0 0 74px; min-width: 74px; position: relative; z-index: 2; touch-action: manipulation; }
+  .slotsGrid { grid-template-columns: repeat(2, 1fr); }
+  .slotsGrid button, .therapistChoice, .secondaryButton { touch-action: manipulation; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
